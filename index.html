@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>Intel JS</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 100px; background-color: #f4f4f9; transition: all 0.3s; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; background: #007BFF; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1 id="text">გამარჯობა ყველას!</h1>
+    <p>დაჭერები: <span id="counter">0</span></p>
+    <button id="myButton">დამაჭირე!</button>
+
+    <script>
+        const txt = document.getElementById("text");
+        const btn = document.getElementById("myButton");
+        const cnt = document.getElementById("counter");
+        
+        let num = 0;
+        const colors = ["red", "green", "blue", "purple", "orange"];
+
+        btn.addEventListener("click", function() {
+            num = num + 1;
+            cnt.textContent = num;
+            
+            if (num >= 10) {
+                txt.textContent = "🏆 მიაღწიეთ 10-ს!";
+                txt.style.color = "gold";
+                document.body.style.backgroundColor = "#222";
+            } else {
+                const clr = colors[Math.floor(Math.random() * colors.length)];
+                txt.style.color = clr;
+            }
+        });
+    </script>
+
+</body>
+</html>
